@@ -1,0 +1,1 @@
+g++ main.cpp Math.cpp -o main.exe
