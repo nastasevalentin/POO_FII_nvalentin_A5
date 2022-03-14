@@ -1,7 +1,8 @@
 class Canvas
 
 {
-  // add private data members
+  int width, height;
+  char** m;
 
  public:
   Canvas(int width, int height);

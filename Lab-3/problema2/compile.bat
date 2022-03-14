@@ -1,0 +1,1 @@
+g++ main.cpp Canvas.cpp -o main.exe
