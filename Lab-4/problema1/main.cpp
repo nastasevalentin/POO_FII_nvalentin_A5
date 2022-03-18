@@ -23,5 +23,7 @@ int main() { /*
   Sort v5(new int[3]{9, 5, 6}, 3);
   v5.InsertSort(false);
   v5.Print();
+
+  cout << v5.GetElementFromIndex(2) << ' ' << v5.GetElementsCount();
   return 0;
 }
