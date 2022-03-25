@@ -12,8 +12,15 @@ class Number
   //~Number();
 
   // add operators and copy/move constructor
-  int operator+(const Number& i);
-  int operator-(const Number& i);
+  Number operator+(const Number& i);
+  Number operator++(int i);
+  Number operator-(const Number& i);
+  Number operator--(int i);
+  Number operator--();
+  Number operator=(int i);
+  Number operator=(const char* i);
+  Number operator+=(const Number& i);
+  Number operator-=(const Number& i);
   int operator>(const Number& i);
   int operator>=(const Number& i);
   int operator<(const Number& i);
