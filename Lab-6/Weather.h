@@ -1,5 +1,2 @@
-#include "Car.h"
-class Weather {
- public:
-  enum weather { Windy, Rainy, Sunny };
-};
+#pragma once
+enum Weather { Snow, Rainy, Sunny };

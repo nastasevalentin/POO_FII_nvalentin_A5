@@ -1,12 +1,15 @@
-#include "Car.h"
-
+#include "Circuit.h"
 class Dacia : public Car {
+  float hours;
+
  public:
-  Dacia() {
-    fuelCapacity = 50;
-    fuelConsumption = 9;
-    averageSpeedSunny = 80;
-    averagespeedRainy = 50;
-    averageSpeedSnow = 50;
-  }
+  Dacia();
+  ~Dacia();
+
+  float GetAverageSpeed(Weather weather);
+  float GetFuelCapacity();
+  float GetFuelConsumption(Weather weather);
+  float GetHours(Weather weather);
+  int GetTimeToFinish(Weather weather, int length);
+  // const char* GetName() override { return "Dacia"; }
 };

@@ -1,11 +1,12 @@
-#include "Car.h"
+#include "Weather.h"
 class Ford : public Car {
  public:
-  Ford() {
-    fuelCapacity = 55;
-    fuelConsumption = 7;
-    averageSpeedSunny = 95;
-    averagespeedRainy = 60;
-    averageSpeedSnow = 60;
-  }
+  Ford();
+  ~Ford();
+
+  float GetAverageSpeed(Weather weather);
+  float GetFuelCapacity();
+  float GetFuelConsumption(Weather weather);
+  float GetHours(Weather weather);
+  int GetTimeToFinish(Weather weather, int length);
 };
