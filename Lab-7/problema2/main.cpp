@@ -1,20 +1,51 @@
-#include <cstdio>
-#include <cstdlib>
 #include <iostream>
-#include <memory>
 
-#include "vector.h"
-using namespace std;
-int main() {
-  Vector<int> v;
+template <typename T>
+class Vector{
+    int count;
+    T* elements;
+    int index;
+    Vector();
+    void push(T element);
+    void pop (T element);
+    void remove (T index);   
+    void insert (T index, T element);
+    void sort ();
+};
 
-  v.push(5);
-  v.push(8);
-  v.push(3);
+ 
+template <typename T>
+void Vector<T>::push(T element) {
+  this->count++;
+  this->elements = static_cast<T>(realloc(this->elements, this->count * sizeof(T)));
+    this -> elements [this->count - 1] = element;
+}
+ 
+template <typename T>
+void Vector<T>::pop(T element){
+    this->count--;
+    this->elements = static_cast<T>(realloc(this->elements, this->count * sizeof(T)));
+}
 
-  v.remove(1);
-  v.insert(1, 7);
-  v.set(1, 2);
-  cout << "Elementul de pe indicele 2 este: " << v.get(2) << '\n';
-  cout << "Numarul de elemente este: " << v.countV() << '\n';
+template <typename T>
+void Vector<T>::remove (T index){
+    for (int i = index; i < count; i++)
+        this -> elements[i] = this->elements[i + 1];
+    this->count--;
+    this->elements = static_cast<T>(realloc(this->elements, this->count * sizeof(T)));
+}
+
+template <typename T>
+void Vector<T>::insert (T index, T element){
+    count++;
+    this->elements = static_cast<T>(realloc(this->elements, this->count * sizeof(T)));
+    for (int i = count; i > index;  i--)
+    {
+        this -> elements[i] = this->elements[i - 1];
+    }
+    this -> elements[index] = element;
+}
+
+int main (void){
+
 }

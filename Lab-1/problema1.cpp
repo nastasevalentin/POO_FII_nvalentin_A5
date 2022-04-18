@@ -19,7 +19,7 @@ int main() {
   char myString[200], backup[200];
   int sum = 0;
   if (fopen_s(&fp, "in.txt", "r") != 0) {
-    // printf("eroare");
+     printf("eroare");
   } else {
     // printf("am deschis fisierul");
     while (fgets(myString, 200, fp)) {
