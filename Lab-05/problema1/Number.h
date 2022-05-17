@@ -7,25 +7,36 @@ class Number
   int current_base;
 
  public:
-  Number(const char* value, int base);  // where base is between 2 and 16
+  Number(const char* value, int base);
 
-  //~Number();
+  Number(int num);
+  Number(const char* value);
+  Number(const Number& num);
+  Number(const Number&& num);
+
+  ~Number();
+
+  Number& operator=(Number&& i);
+
+  int operator[](int index);
+
+  bool operator-=(Number i);
+  bool operator>(Number i);
+  bool operator>=(Number i);
+  bool operator<(Number i);
+  bool operator<=(Number i);
+  bool operator==(Number i);
 
   // add operators and copy/move constructor
-  Number operator+(const Number& i);
-  Number operator++(int i);
-  Number operator-(const Number& i);
-  Number operator--(int i);
-  Number operator--();
-  Number operator=(int i);
-  Number operator=(const char* i);
-  Number operator+=(const Number& i);
-  Number operator-=(const Number& i);
-  int operator>(const Number& i);
-  int operator>=(const Number& i);
-  int operator<(const Number& i);
-  int operator<=(const Number& i);
-  int operator==(const Number& i);
+  friend Number operator+(const Number& i);
+  friend Number operator-(const Number& i);
+
+  Number& operator+=(const Number& i);
+
+  void operator++(int i);
+  void operator--(int i);
+  void operator--();
+  // bool operator=(int i);
 
   void SwitchBase(int newBase);
 
